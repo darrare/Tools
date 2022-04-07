@@ -1,0 +1,258 @@
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<style>
+		td {
+			width: 50px;
+			height: 50px;
+			background-color: #DDDDDD;
+		}
+
+		.active {
+			background-color: #AAAAAA;
+		}
+
+		.current {
+			background-color: #0094ff !important;
+		}
+	
+		.goal {
+			background-color: forestgreen;
+		}
+
+        .blocked {
+            background-color: #000000;
+        }
+	</style>
+</head>
+<body>
+	<table>
+		<tr>
+			<td id="11" class="" onclick="onMove(1, 1)"></td>
+			<td id="21" class="" onclick="onMove(2, 1)"></td>
+			<td id="31" class="" onclick="onMove(3, 1)"></td>
+			<td id="41" class="" onclick="onMove(4, 1)"></td>
+			<td id="51" class="" onclick="onMove(5, 1)"></td>
+			<td id="61" class="" onclick="onMove(6, 1)"></td>
+			<td id="71" class="" onclick="onMove(7, 1)"></td>
+			<td id="81" class="" onclick="onMove(8, 1)"></td>
+			<td id="91" class="" onclick="onMove(9, 1)"></td>
+		</tr>
+		<tr>
+			<td id="12" class="" onclick="onMove(1, 2)"></td>
+			<td id="22" class="" onclick="onMove(2, 2)"></td>
+			<td id="32" class="" onclick="onMove(3, 2)"></td>
+			<td id="42" class="" onclick="onMove(4, 2)"></td>
+			<td id="52" class="" onclick="onMove(5, 2)"></td>
+			<td id="62" class="" onclick="onMove(6, 2)"></td>
+			<td id="72" class="" onclick="onMove(7, 2)"></td>
+			<td id="82" class="" onclick="onMove(8, 2)"></td>
+			<td id="92" class="" onclick="onMove(9, 2)"></td>
+		</tr>
+		<tr>
+			<td id="13" class="" onclick="onMove(1, 3)"></td>
+			<td id="23" class="" onclick="onMove(2, 3)"></td>
+			<td id="33" class="" onclick="onMove(3, 3)"></td>
+			<td id="43" class="" onclick="onMove(4, 3)"></td>
+			<td id="53" class="" onclick="onMove(5, 3)"></td>
+			<td id="63" class="" onclick="onMove(6, 3)"></td>
+			<td id="73" class="" onclick="onMove(7, 3)"></td>
+			<td id="83" class="" onclick="onMove(8, 3)"></td>
+			<td id="93" class="" onclick="onMove(9, 3)"></td>
+		</tr>
+		<tr>
+			<td id="14" class="" onclick="onMove(1, 4)"></td>
+			<td id="24" class="" onclick="onMove(2, 4)"></td>
+			<td id="34" class="" onclick="onMove(3, 4)"></td>
+			<td id="44" class="" onclick="onMove(4, 4)"></td>
+			<td id="54" class="" onclick="onMove(5, 4)"></td>
+			<td id="64" class="" onclick="onMove(6, 4)"></td>
+			<td id="74" class="" onclick="onMove(7, 4)"></td>
+			<td id="84" class="" onclick="onMove(8, 4)"></td>
+			<td id="94" class="" onclick="onMove(9, 4)"></td>
+		</tr>
+		<tr>
+			<td id="15" class="" onclick="onMove(1, 5)"></td>
+			<td id="25" class="" onclick="onMove(2, 5)"></td>
+			<td id="35" class="" onclick="onMove(3, 5)"></td>
+			<td id="45" class="" onclick="onMove(4, 5)"></td>
+			<td id="55" class="" onclick="onMove(5, 5)"></td>
+			<td id="65" class="" onclick="onMove(6, 5)"></td>
+			<td id="75" class="" onclick="onMove(7, 5)"></td>
+			<td id="85" class="" onclick="onMove(8, 5)"></td>
+			<td id="95" class="" onclick="onMove(9, 5)"></td>
+		</tr>
+		<tr>
+			<td id="16" class="" onclick="onMove(1, 6)"></td>
+			<td id="26" class="" onclick="onMove(2, 6)"></td>
+			<td id="36" class="" onclick="onMove(3, 6)"></td>
+			<td id="46" class="" onclick="onMove(4, 6)"></td>
+			<td id="56" class="" onclick="onMove(5, 6)"></td>
+			<td id="66" class="" onclick="onMove(6, 6)"></td>
+			<td id="76" class="" onclick="onMove(7, 6)"></td>
+			<td id="86" class="" onclick="onMove(8, 6)"></td>
+			<td id="96" class="" onclick="onMove(9, 6)"></td>
+		</tr>
+		<tr>
+			<td id="17" class="" onclick="onMove(1, 7)"></td>
+			<td id="27" class="" onclick="onMove(2, 7)"></td>
+			<td id="37" class="" onclick="onMove(3, 7)"></td>
+			<td id="47" class="" onclick="onMove(4, 7)"></td>
+			<td id="57" class="" onclick="onMove(5, 7)"></td>
+			<td id="67" class="" onclick="onMove(6, 7)"></td>
+			<td id="77" class="" onclick="onMove(7, 7)"></td>
+			<td id="87" class="" onclick="onMove(8, 7)"></td>
+			<td id="97" class="" onclick="onMove(9, 7)"></td>
+		</tr>
+		<tr>
+			<td id="18" class="" onclick="onMove(1, 8)"></td>
+			<td id="28" class="" onclick="onMove(2, 8)"></td>
+			<td id="38" class="" onclick="onMove(3, 8)"></td>
+			<td id="48" class="" onclick="onMove(4, 8)"></td>
+			<td id="58" class="" onclick="onMove(5, 8)"></td>
+			<td id="68" class="" onclick="onMove(6, 8)"></td>
+			<td id="78" class="" onclick="onMove(7, 8)"></td>
+			<td id="88" class="" onclick="onMove(8, 8)"></td>
+			<td id="98" class="" onclick="onMove(9, 8)"></td>
+		</tr>
+		<tr>
+			<td id="19" class="" onclick="onMove(1, 9)"></td>
+			<td id="29" class="" onclick="onMove(2, 9)"></td>
+			<td id="39" class="" onclick="onMove(3, 9)"></td>
+			<td id="49" class="" onclick="onMove(4, 9)"></td>
+			<td id="59" class="" onclick="onMove(5, 9)"></td>
+			<td id="69" class="" onclick="onMove(6, 9)"></td>
+			<td id="79" class="" onclick="onMove(7, 9)"></td>
+			<td id="89" class="" onclick="onMove(8, 9)"></td>
+			<td id="99" class="" onclick="onMove(9, 9)"></td>
+		</tr>
+	</table>
+
+	<button onClick="seedInit(46)" style="width: 66px">Level 1</button>
+	<button onClick="seedInit(36)" style="width: 66px">Level 2</button>
+	<button onClick="seedInit(68)" style="width: 66px">Level 3</button>
+	<button onClick="seedInit(13)" style="width: 66px">Level 4</button>
+	<button onClick="seedInit(91)" style="width: 66px">Level 5</button>
+	<button onClick="seedInit(96)" style="width: 66px">Level 6</button>
+	<button onClick="seedInit(65)" style="width: 66px">Level 7</button>
+
+	<hr />
+
+	<table>
+		<tr>
+			<td style="width: 118px; text-align: center; background-color: forestgreen;">Goal</td>
+			<td style="width: 118px; text-align: center; background-color: #0094ff;">Current</td>
+			<td style="width: 118px; text-align: center; background-color: #AAAAAA;">Active</td>
+			<td style="width: 118px; text-align: center; background-color: #000000; color: white;">Blocked</td>
+		</tr>
+	</table>
+
+	<button id="incrementButton" onclick="incrementSeed()">Init 1</button>
+
+
+
+
+	<script type="text/javascript">
+		var lastX = 2;
+		var lastY = 1;
+		var lastMoved = $("#" + lastX + lastY);
+		var rngSeed = 91;
+		var rng = new Rng(rngSeed);
+
+		function onMove(x, y) {
+			if (!$("#" + x + y).hasClass("active")
+				|| $("#" + x + y).hasClass("blocked")
+				|| (!(x == lastX + 1 && y == lastY + 0)
+					&& !(x == lastX - 1 && y == lastY + 0)
+					&& !(x == lastX + 0 && y == lastY + 1)
+					&& !(x == lastX + 0 && y == lastY - 1)
+				)) {
+				return;
+			}
+			if (lastMoved != null) {
+				lastMoved.toggleClass("current");
+			}
+			lastMoved = $("#" + x + y);
+			lastX = x;
+			lastY = y;
+			$("#" + x + y).toggleClass("current");
+
+			// Toggle neighbors
+			$("#" + (x + 1) + (y + 0)).toggleClass("active");
+			$("#" + (x - 1) + (y + 0)).toggleClass("active");
+			$("#" + (x + 0) + (y + 1)).toggleClass("active");
+			$("#" + (x + 0) + (y - 1)).toggleClass("active");
+		}
+
+		function seedInit(seed) {
+			rng = new Rng(seed);
+			init();
+		}
+
+		function incrementSeed() {
+			rngSeed++;
+			$("#incrementButton").text("Init " + rngSeed);
+			seedInit(rngSeed);
+        }
+
+		function init() {
+			$("td").removeClass("blocked active goal current");
+			for (var x = 1; x <= 9; x++) {
+				for (var y = 1; y <= 9; y++) {
+					if (rng.nextFloat() < .3) {
+						$("#" + x + y).toggleClass("blocked");
+					}
+					else if (rng.nextFloat() < .3) {
+						$("#" + x + y).toggleClass("active");
+					}
+				}
+			}
+
+			// Pick starting location
+			var tempX = rng.nextFloat() > .5 ? 1 : 9;
+			var tempY = rng.nextRange(1, 9 + 1);
+			$("#" + tempX + tempY).removeClass("blocked active goal current");
+			$("#" + tempX + tempY).addClass("current");
+
+			lastX = tempX;
+			lastY = tempY;
+			lastMoved = $("#" + tempX + tempY)
+
+			// Pick ending location
+			tempX = rng.nextFloat() > .5 ? 1 : 9;
+			tempY = rng.nextRange(1, 9 + 1);
+			$("#" + tempX + tempY).removeClass("blocked active goal current");
+			$("#" + tempX + tempY).addClass("goal");
+		}
+
+
+
+		function Rng(seed) {
+			// LCG using GCC's constants
+			this.m = 0x80000000; // 2**31;
+			this.a = 1103515245;
+			this.c = 12345;
+
+			this.state = seed ? seed : Math.floor(Math.random() * (this.m - 1));
+		}
+		Rng.prototype.nextInt = function () {
+			this.state = (this.a * this.state + this.c) % this.m;
+			return this.state;
+		}
+		Rng.prototype.nextFloat = function () {
+			// returns in range [0,1]
+			return this.nextInt() / (this.m - 1);
+		}
+		Rng.prototype.nextRange = function (start, end) {
+			// returns in range [start, end): including start, excluding end
+			// can't modulu nextInt because of weak randomness in lower bits
+			var rangeSize = end - start;
+			var randomUnder1 = this.nextInt() / this.m;
+			return start + Math.floor(randomUnder1 * rangeSize);
+		}
+		Rng.prototype.choice = function (array) {
+			return array[this.nextRange(0, array.length)];
+		}
+	</script>
+</body>
+</html>
